@@ -26,5 +26,5 @@ Unity Latest Version：5.5.0b11
     <dd>Inspectorに投げたいときはPublicではなく[SerializeField]を利用してください</dd>
 </dl>
 **[素材提供]**
-ボクシンググローブ：神子 様
+ボクシンググローブ：神子 様</dt>
 </dl>
