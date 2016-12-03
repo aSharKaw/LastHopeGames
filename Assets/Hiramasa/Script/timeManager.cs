@@ -1,0 +1,28 @@
+﻿
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class timeManager : MonoBehaviour
+{
+  [SerializeField]
+  private Text time;
+
+  private static ushort setTime = 60;
+  private float timeLeft = 0.0f;
+
+  public static ushort getTime() { return setTime; }
+
+  void Update()
+  {
+    timeLeft -= Time.deltaTime;
+
+    if (timeLeft <= 0.0f && setTime != 0)
+    {
+      timeLeft = 1.0f;
+      setTime -= 1;
+      time.text = setTime.ToString();
+    }
+  }
+}
