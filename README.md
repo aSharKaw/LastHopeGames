@@ -28,4 +28,5 @@ Unity Latest Version：5.5.0f3
 **[素材提供]**
 <dl>
 <dt>ボクシンググローブ</dt>
+<dd>神子 様</dd>
 </dl>
