@@ -1,32 +1,15 @@
 fileFormatVersion: 2
-guid: 8e3e156f7d0e16b48854d2766256efc3
-timeCreated: 1480745431
+guid: 97d528913789dc74ab918217004aa815
+timeCreated: 1481639569
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: Bar
-    100002: Paul
-    100004: //RootNode
-    100006: Rope
-    100008: Stand
-    400000: Bar
-    400002: Paul
-    400004: //RootNode
-    400006: Rope
-    400008: Stand
-    2300000: Bar
-    2300002: Paul
-    2300004: Rope
-    2300006: Stand
-    3300000: Bar
-    3300002: Paul
-    3300004: Rope
-    3300006: Stand
-    4300000: Stand
-    4300002: Paul
-    4300004: Bar
-    4300006: Rope
+    100000: //RootNode
+    400000: //RootNode
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Ring
   materials:
     importMaterials: 1
     materialName: 0
