@@ -1,8 +1,6 @@
 ﻿
 using UnityEngine;
 using UnityEngine.UI;
-using System.Collections;
-using System.Collections.Generic;
 
 public class hpManager : MonoBehaviour
 {
@@ -11,9 +9,16 @@ public class hpManager : MonoBehaviour
 
   void Update()
   {
-    for (int i = 0; i < hpBar.Length; ++i)
+    if (Input.GetButtonDown("TalconghaLeft"))
     {
-      hpBar[i].fillAmount -= 0.001f;
+      // 1P
+      hpBar[0].fillAmount -= 0.025f;
+    }
+    if (boxerState.getPlayer1State().IsName("Base Layer.LeftPunch")
+      && boxerState.getPlayer2State().IsName("Base Layer.Idle"))
+    {
+      // 2P
+      hpBar[1].fillAmount -= 0.005f;
     }
   }
 }
