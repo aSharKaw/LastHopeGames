@@ -11,9 +11,15 @@ public class hpManager : MonoBehaviour
 
   void Update()
   {
-    for (int i = 0; i < hpBar.Length; ++i)
+    if (Input.GetButtonDown("TalconghaLeft"))
     {
-      hpBar[i].fillAmount -= 0.001f;
+      // 1P
+      hpBar[0].fillAmount -= 0.025f;
+    }
+    if (Input.GetButtonDown("TalconghaRight"))
+    {
+      // 2P
+      hpBar[1].fillAmount -= 0.025f;
     }
   }
 }

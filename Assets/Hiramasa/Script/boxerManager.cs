@@ -16,11 +16,11 @@ public class boxerManager : MonoBehaviour
   {
     if (Input.GetButtonDown("TalconghaRight"))
     {
-      animator.SetBool("Punch", true);
+      animator.SetBool("RightPunch", true);
     }
     else
     {
-      animator.SetBool("Punch", false);
+      animator.SetBool("RightPunch", false);
     }
   }
 }
