@@ -14,6 +14,9 @@ public class boxerManager : MonoBehaviour
 
   void Update()
   {
+    AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
+    Debug.Log(stateInfo.IsName("Base Layer.Idle"));
+
     if (Input.GetButtonDown("TalconghaRight"))
     {
       animator.SetBool("RightPunch", true);
