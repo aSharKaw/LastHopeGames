@@ -3,22 +3,47 @@ using UnityEngine;
 
 public class test : MonoBehaviour
 {
-  private Animator animator;
+  //private Animator animator;
 
   void Start()
   {
-    animator = GetComponent<Animator>();
+    //animator = GetComponent<Animator>();
   }
 
   void Update()
   {
-    if (Input.GetKeyDown(KeyCode.Space))
+    //if (Input.GetKeyDown(KeyCode.Space))
+    //{
+    //  animator.SetBool("RightPunch", true);
+    //}
+    //else
+    //{
+    //  animator.SetBool("RightPunch", false);
+    //}
+    if (inputManager.GetDown1PLeft())
     {
-      animator.SetBool("RightPunch", true);
+      Debug.Log("GetDown1PLeft");
     }
-    else
+    if (inputManager.GetDown1PRight())
     {
-      animator.SetBool("RightPunch", false);
+      Debug.Log("GetDown1PRight");
+    }
+    if (inputManager.GetDown1PStart())
+    {
+      Debug.Log("GetDown1PStart");
+    }
+
+    if (inputManager.GetDown2PLeft())
+    {
+      Debug.Log("GetDown2PLeft");
+    }
+    if (inputManager.GetDown2PRight())
+    {
+      Debug.Log("GetDown2PRight");
+    }
+    if (inputManager.GetDown2PStart())
+    {
+      Debug.Log("GetDown2PStart");
     }
   }
 }
