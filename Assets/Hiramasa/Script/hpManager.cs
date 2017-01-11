@@ -9,10 +9,10 @@ public class hpManager : MonoBehaviour
 
   void Update()
   {
-    if (Input.GetButtonDown("TalconghaLeft"))
+    if (Input.GetButtonDown("1PTalconghaLeft"))
     {
       // 1P
-      hpBar[0].fillAmount -= 0.025f;
+      // hpBar[0].fillAmount -= 0.025f;
     }
     if (boxerState.getPlayer1State().IsName("Base Layer.LeftPunch")
       && boxerState.getPlayer2State().IsName("Base Layer.Idle"))
