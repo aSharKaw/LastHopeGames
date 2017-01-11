@@ -9,12 +9,12 @@ public class hpManager : MonoBehaviour
 
   void Update()
   {
-    if (Input.GetButtonDown("TalconghaLeft"))
+    if (inputManager.GetDown1PRight())
     {
       // 1P
-      hpBar[0].fillAmount -= 0.025f;
+      // hpBar[0].fillAmount -= 0.025f;
     }
-    if (boxerState.getPlayer1State().IsName("Base Layer.LeftPunch")
+    if (boxerState.getPlayer1State().IsName("Base Layer.RightPunch")
       && boxerState.getPlayer2State().IsName("Base Layer.Idle"))
     {
       // 2P
