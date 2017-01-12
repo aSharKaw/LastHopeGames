@@ -9,11 +9,17 @@ using UnityEditor;
 public class CreateAudience : MonoBehaviour {
 
     //初期値は適当。
+    [SerializeField]
     private GameObject audience;
-    private int memberNumber = 5;
+    [SerializeField]
+    private int memberNumber = 8;
+    [SerializeField]
     private int columnNumber = 2;
+    [SerializeField]
     private float membersWidth = 2.0f;
+    [SerializeField]
     private float columnsWidth = 1.0f;
+    [SerializeField]
     private float columnsHeight = 1.5f;
 
 #if UNITY_EDITOR//プランナー向けにInspector拡張
@@ -52,10 +58,11 @@ public class CreateAudience : MonoBehaviour {
             {
                 Instantiate(audience,
                     new Vector3(
-                        transform.position.x + (j * membersWidth),
-                        transform.position.y + (i * columnsHeight),
-                        transform.position.z + (i * columnsWidth)),
-                    Quaternion.identity);
+                        transform.localPosition.x + (j * membersWidth),
+                        transform.localPosition.y + (i * columnsHeight),
+                        transform.localPosition.z + (i * columnsWidth)),
+                    Quaternion.identity,
+                    transform);
             }
         }
     }
