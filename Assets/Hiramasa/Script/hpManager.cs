@@ -9,7 +9,7 @@ public class hpManager : MonoBehaviour
 
   void Update()
   {
-    if (inputManager.GetDown1PRight())
+    if (inputManager.GetDownRight1P())
     {
       // 1P
       // hpBar[0].fillAmount -= 0.025f;

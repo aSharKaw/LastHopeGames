@@ -16,7 +16,6 @@ public class timeManager : MonoBehaviour
 
   void Update()
   {
-    if (Input.GetKeyDown(KeyCode.T)) setTime = 10; // Debug
     timeLeft -= Time.deltaTime;
 
     if (timeLeft <= 0.0f && setTime != 0)
@@ -25,5 +24,11 @@ public class timeManager : MonoBehaviour
       setTime -= 1;
       time.text = setTime.ToString();
     }
-  }
+
+#if false
+
+    if (Input.GetKeyDown(KeyCode.T)) setTime = 10;
+
+#endif
+    }
 }
