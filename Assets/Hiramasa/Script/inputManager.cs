@@ -7,7 +7,7 @@ public class inputManager : MonoBehaviour
   {
     if (Input.GetKeyDown(KeyCode.JoystickButton0) ||
       Input.GetKeyDown(KeyCode.JoystickButton1) ||
-      Input.GetKeyDown(KeyCode.A))
+      Input.GetKeyDown(KeyCode.D))
     {
       return true;
     }
@@ -17,7 +17,7 @@ public class inputManager : MonoBehaviour
   {
     if (Input.GetKeyDown(KeyCode.JoystickButton2) ||
       Input.GetKeyDown(KeyCode.JoystickButton3) ||
-      Input.GetKeyDown(KeyCode.D))
+      Input.GetKeyDown(KeyCode.A))
     {
       return true;
     }
