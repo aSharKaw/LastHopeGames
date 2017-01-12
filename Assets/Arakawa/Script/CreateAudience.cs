@@ -2,35 +2,47 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
+
 public class CreateAudience : MonoBehaviour {
 
-    [SerializeField, Tooltip("観客モデル")]
+    //初期値は適当。
     private GameObject audience;
+    private int memberNumber = 5;
+    private int columnNumber = 2;
+    private float membersWidth = 2.0f;
+    private float columnsWidth = 1.0f;
+    private float columnsHeight = 1.5f;
 
-    [SerializeField, Tooltip("1列あたりの観客数")]
-    private int memberNumber;
+#if UNITY_EDITOR//プランナー向けにInspector拡張
+    [CustomEditor(typeof(CreateAudience))]
+    public class AudienceEditer : Editor
+    {
+        bool folder = false;
 
-    [SerializeField, Tooltip("観客列数")]
-    private int columnNumber;
+        public override void OnInspectorGUI()
+        {
+            CreateAudience editor = target as CreateAudience;
 
-    [SerializeField, Tooltip("観客同士の間隔")]
-    private float membersWidth;
+            editor.audience = EditorGUILayout.ObjectField("観客モデル", editor.audience, typeof(GameObject), true)as GameObject;
 
-    [SerializeField, Tooltip("列同士の間隔")]
-    private float columnsWidth;
+            if(folder = EditorGUILayout.Foldout(folder, "status"))
+            {
+                editor.memberNumber = EditorGUILayout.IntField("1列あたりの観客数", editor.memberNumber);
+                editor.columnNumber = EditorGUILayout.IntField("観客列数", editor.columnNumber);
+                editor.membersWidth = EditorGUILayout.FloatField("観客同士の間隔", editor.membersWidth);
+                editor.columnsWidth = EditorGUILayout.FloatField("列同士の間隔", editor.columnsWidth);
+                editor.columnsHeight = EditorGUILayout.FloatField("2列目以降に足される高さ", editor.columnsHeight);
+            }
 
-    [SerializeField, Tooltip("2列目以降に足される高さ")]
-    private float columnsHeight;
+        }
+    }
+#endif
 
-	// Use this for initialization
+
 	void Start () {
-        //数値が入力されてない場合
-        memberNumber = 5;
-        columnNumber = 2;
-        membersWidth = 2.0f;
-        columnsWidth = 1.0f;
-        columnsHeight = 1.5f;
-
 
         //列数
         for (int i = 0; i < columnNumber; i++)
@@ -41,15 +53,11 @@ public class CreateAudience : MonoBehaviour {
                 Instantiate(audience,
                     new Vector3(
                         transform.position.x + (j * membersWidth),
-                        transform.position.y + (i * columnsWidth),
-                        transform.position.z + (i * columnsHeight)),
+                        transform.position.y + (i * columnsHeight),
+                        transform.position.z + (i * columnsWidth)),
                     Quaternion.identity);
             }
         }
     }
 	
-	// Update is called once per frame
-	void Update () {
-
-    }
 }
