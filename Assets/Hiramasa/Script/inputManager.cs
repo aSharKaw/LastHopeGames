@@ -63,16 +63,16 @@ public class inputManager : MonoBehaviour
     else { return false; }
   }
 
-#if false
+#if true
 
   private uint count = 0;
 
-	void Update()
+  void Update()
   {
-	  if (GetDownLeft1P()) { Debug.Log("GetDownLeft1P " + count++.ToString()); }
+    if (GetDownLeft1P()) { Debug.Log("GetDownLeft1P " + count++.ToString()); }
     if (GetDownRight1P()) { Debug.Log("GetDownRight1P " + count++.ToString()); }
     if (GetDownStart1P()) { Debug.Log("GetDownStart1P " + count++.ToString()); }
-	  if (GetDownLeft2P()) { Debug.Log("GetDownLeft2P " + count++.ToString());}
+    if (GetDownLeft2P()) { Debug.Log("GetDownLeft2P " + count++.ToString()); }
     if (GetDownRight2P()) { Debug.Log("GetDownRight2P " + count++.ToString()); }
     if (GetDownStart2P()) { Debug.Log("GetDownStart2P " + count++.ToString()); }
   }
