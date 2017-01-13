@@ -12,7 +12,7 @@ public class timeManager : MonoBehaviour
   private static ushort setTime = 60;
   private float timeLeft = 0.0f;
 
-  public static ushort getTime() { return setTime; }
+  public static ushort getTime => setTime;
 
   void Update()
   {
