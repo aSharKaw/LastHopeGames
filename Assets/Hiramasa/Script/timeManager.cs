@@ -30,5 +30,5 @@ public class timeManager : MonoBehaviour
     if (Input.GetKeyDown(KeyCode.T)) setTime = 10;
 
 #endif
-    }
+  }
 }
