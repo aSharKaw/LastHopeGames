@@ -14,7 +14,7 @@ public class boxerInput : MonoBehaviour
 
   void Update()
   {
-    if (Input.GetButtonDown("TalconghaRight"))
+    if (inputManager.GetDownRight1P())
     {
       animator.SetBool("RightPunch", true);
     }

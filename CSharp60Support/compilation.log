@@ -1,0 +1,212 @@
+********************************************************************************
+*                       Friday, 13 January 2017 10:23:09                       *
+********************************************************************************
+CSharpCompilerWrapper.exe version: 2.0.3.30
+Platform: Mac
+Target assembly: Assembly-CSharp.dll
+Project directory: /Users/nanashi/Documents/LastHopeGames
+Target profile directory: /Applications/Unity/Unity.app/Contents/Mono/lib/mono/unity
+Unity 'Data' or 'Frameworks' directory: /Applications/Unity/Unity.app/Contents
+Compiler: Microsoft C# 6.0
+
+- Compilation -----------------------------------------------
+
+Process: /Library/Frameworks/Mono.framework/Commands/mono
+Arguments: "/Users/nanashi/Documents/LastHopeGames/CSharp60Support/Roslyn/csc.exe" -nostdlib+ -noconfig -nologo -r:"/Applications/Unity/Unity.app/Contents/Mono/lib/mono/unity/mscorlib.dll" -r:"/Applications/Unity/Unity.app/Contents/Mono/lib/mono/unity/System.dll" -r:"/Applications/Unity/Unity.app/Contents/Mono/lib/mono/unity/System.Core.dll" -r:"/Applications/Unity/Unity.app/Contents/Mono/lib/mono/unity/System.Xml.dll" @Temp/UnityTempFile-a25eff037e27248aab1f1c8af4f4f650 -debug-
+Exit code: 0
+Elapsed time: 2.76 sec
+
+- Compiler output (0 lines):
+
+- Compiler errors (7 lines):
+0: Assets/Arakawa/Script/LightMove.cs(11,17): warning CS0649: Field 'LightMove.minTime' is never assigned to, and will always have its default value 0
+1: Assets/Arakawa/Script/LightMove.cs(18,19): warning CS0649: Field 'LightMove.minAngle' is never assigned to, and will always have its default value 0
+2: Assets/Hiramasa/Script/timeManager.cs(10,16): warning CS0649: Field 'timeManager.time' is never assigned to, and will always have its default value null
+3: Assets/Arakawa/Script/CreateAudience.cs(8,24): warning CS0649: Field 'CreateAudience.audience' is never assigned to, and will always have its default value null
+4: Assets/Arakawa/Script/LightMove.cs(13,17): warning CS0649: Field 'LightMove.maxTime' is never assigned to, and will always have its default value 0
+5: Assets/Arakawa/Script/LightMove.cs(20,19): warning CS0649: Field 'LightMove.maxAngle' is never assigned to, and will always have its default value 0
+6: Assets/Hiramasa/Script/hpManager.cs(8,19): warning CS0649: Field 'hpManager.hpBar' is never assigned to, and will always have its default value null
+
+PDB to MDB conversion skipped
+********************************************************************************
+*                       Friday, 13 January 2017 10:23:13                       *
+********************************************************************************
+CSharpCompilerWrapper.exe version: 2.0.3.30
+Platform: Mac
+Target assembly: Assembly-CSharp-Editor.dll
+Project directory: /Users/nanashi/Documents/LastHopeGames
+Target profile directory: /Applications/Unity/Unity.app/Contents/Mono/lib/mono/2.0
+Unity 'Data' or 'Frameworks' directory: /Applications/Unity/Unity.app/Contents
+Compiler: Microsoft C# 6.0
+
+- Compilation -----------------------------------------------
+
+Process: /Library/Frameworks/Mono.framework/Commands/mono
+Arguments: "/Users/nanashi/Documents/LastHopeGames/CSharp60Support/Roslyn/csc.exe" -nostdlib+ -noconfig -nologo -r:"/Applications/Unity/Unity.app/Contents/Mono/lib/mono/2.0/mscorlib.dll" -r:"/Applications/Unity/Unity.app/Contents/Mono/lib/mono/2.0/System.dll" -r:"/Applications/Unity/Unity.app/Contents/Mono/lib/mono/2.0/System.Core.dll" -r:"/Applications/Unity/Unity.app/Contents/Mono/lib/mono/2.0/System.Xml.dll" @Temp/UnityTempFile-df2833752c8a6436b8836ba5f8d61051 -debug-
+Exit code: 0
+Elapsed time: 1.73 sec
+
+- Compiler output (0 lines):
+
+- Compiler errors (0 lines):
+
+PDB to MDB conversion skipped
+********************************************************************************
+*                       Friday, 13 January 2017 10:23:58                       *
+********************************************************************************
+CSharpCompilerWrapper.exe version: 2.0.3.30
+Platform: Mac
+Target assembly: Assembly-CSharp.dll
+Project directory: /Users/nanashi/Documents/LastHopeGames
+Target profile directory: /Applications/Unity/Unity.app/Contents/Mono/lib/mono/unity
+Unity 'Data' or 'Frameworks' directory: /Applications/Unity/Unity.app/Contents
+Compiler: Microsoft C# 6.0
+
+- Compilation -----------------------------------------------
+
+Process: /Library/Frameworks/Mono.framework/Commands/mono
+Arguments: "/Users/nanashi/Documents/LastHopeGames/CSharp60Support/Roslyn/csc.exe" -nostdlib+ -noconfig -nologo -r:"/Applications/Unity/Unity.app/Contents/Mono/lib/mono/unity/mscorlib.dll" -r:"/Applications/Unity/Unity.app/Contents/Mono/lib/mono/unity/System.dll" -r:"/Applications/Unity/Unity.app/Contents/Mono/lib/mono/unity/System.Core.dll" -r:"/Applications/Unity/Unity.app/Contents/Mono/lib/mono/unity/System.Xml.dll" @Temp/UnityTempFile-abf8e0290a658443aa83e618c35ff9c4 -debug-
+Exit code: 0
+Elapsed time: 2.79 sec
+
+- Compiler output (0 lines):
+
+- Compiler errors (7 lines):
+0: Assets/Arakawa/Script/LightMove.cs(20,19): warning CS0649: Field 'LightMove.maxAngle' is never assigned to, and will always have its default value 0
+1: Assets/Arakawa/Script/LightMove.cs(11,17): warning CS0649: Field 'LightMove.minTime' is never assigned to, and will always have its default value 0
+2: Assets/Hiramasa/Script/timeManager.cs(10,16): warning CS0649: Field 'timeManager.time' is never assigned to, and will always have its default value null
+3: Assets/Arakawa/Script/LightMove.cs(13,17): warning CS0649: Field 'LightMove.maxTime' is never assigned to, and will always have its default value 0
+4: Assets/Arakawa/Script/CreateAudience.cs(8,24): warning CS0649: Field 'CreateAudience.audience' is never assigned to, and will always have its default value null
+5: Assets/Hiramasa/Script/hpManager.cs(8,18): warning CS0649: Field 'hpManager.hpBar' is never assigned to, and will always have its default value null
+6: Assets/Arakawa/Script/LightMove.cs(18,19): warning CS0649: Field 'LightMove.minAngle' is never assigned to, and will always have its default value 0
+
+PDB to MDB conversion skipped
+********************************************************************************
+*                       Friday, 13 January 2017 10:24:01                       *
+********************************************************************************
+CSharpCompilerWrapper.exe version: 2.0.3.30
+Platform: Mac
+Target assembly: Assembly-CSharp-Editor.dll
+Project directory: /Users/nanashi/Documents/LastHopeGames
+Target profile directory: /Applications/Unity/Unity.app/Contents/Mono/lib/mono/2.0
+Unity 'Data' or 'Frameworks' directory: /Applications/Unity/Unity.app/Contents
+Compiler: Microsoft C# 6.0
+
+- Compilation -----------------------------------------------
+
+Process: /Library/Frameworks/Mono.framework/Commands/mono
+Arguments: "/Users/nanashi/Documents/LastHopeGames/CSharp60Support/Roslyn/csc.exe" -nostdlib+ -noconfig -nologo -r:"/Applications/Unity/Unity.app/Contents/Mono/lib/mono/2.0/mscorlib.dll" -r:"/Applications/Unity/Unity.app/Contents/Mono/lib/mono/2.0/System.dll" -r:"/Applications/Unity/Unity.app/Contents/Mono/lib/mono/2.0/System.Core.dll" -r:"/Applications/Unity/Unity.app/Contents/Mono/lib/mono/2.0/System.Xml.dll" @Temp/UnityTempFile-741d64d9522794773ac63b4c19edd3e6 -debug-
+Exit code: 0
+Elapsed time: 2.27 sec
+
+- Compiler output (0 lines):
+
+- Compiler errors (0 lines):
+
+PDB to MDB conversion skipped
+********************************************************************************
+*                       Friday, 13 January 2017 10:25:35                       *
+********************************************************************************
+CSharpCompilerWrapper.exe version: 2.0.3.30
+Platform: Mac
+Target assembly: Assembly-CSharp.dll
+Project directory: /Users/nanashi/Documents/LastHopeGames
+Target profile directory: /Applications/Unity/Unity.app/Contents/Mono/lib/mono/unity
+Unity 'Data' or 'Frameworks' directory: /Applications/Unity/Unity.app/Contents
+Compiler: Microsoft C# 6.0
+
+- Compilation -----------------------------------------------
+
+Process: /Library/Frameworks/Mono.framework/Commands/mono
+Arguments: "/Users/nanashi/Documents/LastHopeGames/CSharp60Support/Roslyn/csc.exe" -nostdlib+ -noconfig -nologo -r:"/Applications/Unity/Unity.app/Contents/Mono/lib/mono/unity/mscorlib.dll" -r:"/Applications/Unity/Unity.app/Contents/Mono/lib/mono/unity/System.dll" -r:"/Applications/Unity/Unity.app/Contents/Mono/lib/mono/unity/System.Core.dll" -r:"/Applications/Unity/Unity.app/Contents/Mono/lib/mono/unity/System.Xml.dll" @Temp/UnityTempFile-81f1a582df84042788204e4399379438 -debug-
+Exit code: 0
+Elapsed time: 3.87 sec
+
+- Compiler output (0 lines):
+
+- Compiler errors (7 lines):
+0: Assets/Arakawa/Script/CreateAudience.cs(8,24): warning CS0649: Field 'CreateAudience.audience' is never assigned to, and will always have its default value null
+1: Assets/Arakawa/Script/LightMove.cs(13,17): warning CS0649: Field 'LightMove.maxTime' is never assigned to, and will always have its default value 0
+2: Assets/Arakawa/Script/LightMove.cs(20,19): warning CS0649: Field 'LightMove.maxAngle' is never assigned to, and will always have its default value 0
+3: Assets/Hiramasa/Script/hpManager.cs(8,18): warning CS0649: Field 'hpManager.hpBar' is never assigned to, and will always have its default value null
+4: Assets/Arakawa/Script/LightMove.cs(11,17): warning CS0649: Field 'LightMove.minTime' is never assigned to, and will always have its default value 0
+5: Assets/Arakawa/Script/LightMove.cs(18,19): warning CS0649: Field 'LightMove.minAngle' is never assigned to, and will always have its default value 0
+6: Assets/Hiramasa/Script/timeManager.cs(10,16): warning CS0649: Field 'timeManager.time' is never assigned to, and will always have its default value null
+
+PDB to MDB conversion skipped
+********************************************************************************
+*                       Friday, 13 January 2017 10:25:40                       *
+********************************************************************************
+CSharpCompilerWrapper.exe version: 2.0.3.30
+Platform: Mac
+Target assembly: Assembly-CSharp-Editor.dll
+Project directory: /Users/nanashi/Documents/LastHopeGames
+Target profile directory: /Applications/Unity/Unity.app/Contents/Mono/lib/mono/2.0
+Unity 'Data' or 'Frameworks' directory: /Applications/Unity/Unity.app/Contents
+Compiler: Microsoft C# 6.0
+
+- Compilation -----------------------------------------------
+
+Process: /Library/Frameworks/Mono.framework/Commands/mono
+Arguments: "/Users/nanashi/Documents/LastHopeGames/CSharp60Support/Roslyn/csc.exe" -nostdlib+ -noconfig -nologo -r:"/Applications/Unity/Unity.app/Contents/Mono/lib/mono/2.0/mscorlib.dll" -r:"/Applications/Unity/Unity.app/Contents/Mono/lib/mono/2.0/System.dll" -r:"/Applications/Unity/Unity.app/Contents/Mono/lib/mono/2.0/System.Core.dll" -r:"/Applications/Unity/Unity.app/Contents/Mono/lib/mono/2.0/System.Xml.dll" @Temp/UnityTempFile-055f59c6433da47838bd3c1d33595af8 -debug-
+Exit code: 0
+Elapsed time: 1.73 sec
+
+- Compiler output (0 lines):
+
+- Compiler errors (0 lines):
+
+PDB to MDB conversion skipped
+********************************************************************************
+*                       Friday, 13 January 2017 10:25:57                       *
+********************************************************************************
+CSharpCompilerWrapper.exe version: 2.0.3.30
+Platform: Mac
+Target assembly: Assembly-CSharp.dll
+Project directory: /Users/nanashi/Documents/LastHopeGames
+Target profile directory: /Applications/Unity/Unity.app/Contents/Mono/lib/mono/unity
+Unity 'Data' or 'Frameworks' directory: /Applications/Unity/Unity.app/Contents
+Compiler: Microsoft C# 6.0
+
+- Compilation -----------------------------------------------
+
+Process: /Library/Frameworks/Mono.framework/Commands/mono
+Arguments: "/Users/nanashi/Documents/LastHopeGames/CSharp60Support/Roslyn/csc.exe" -nostdlib+ -noconfig -nologo -r:"/Applications/Unity/Unity.app/Contents/Mono/lib/mono/unity/mscorlib.dll" -r:"/Applications/Unity/Unity.app/Contents/Mono/lib/mono/unity/System.dll" -r:"/Applications/Unity/Unity.app/Contents/Mono/lib/mono/unity/System.Core.dll" -r:"/Applications/Unity/Unity.app/Contents/Mono/lib/mono/unity/System.Xml.dll" @Temp/UnityTempFile-cb46bbf4a44c7408e9c21638e4b93846 -debug-
+Exit code: 0
+Elapsed time: 3.99 sec
+
+- Compiler output (0 lines):
+
+- Compiler errors (7 lines):
+0: Assets/Hiramasa/Script/hpManager.cs(8,19): warning CS0649: Field 'hpManager.hpBar' is never assigned to, and will always have its default value null
+1: Assets/Arakawa/Script/LightMove.cs(13,17): warning CS0649: Field 'LightMove.maxTime' is never assigned to, and will always have its default value 0
+2: Assets/Arakawa/Script/LightMove.cs(20,19): warning CS0649: Field 'LightMove.maxAngle' is never assigned to, and will always have its default value 0
+3: Assets/Arakawa/Script/CreateAudience.cs(8,24): warning CS0649: Field 'CreateAudience.audience' is never assigned to, and will always have its default value null
+4: Assets/Arakawa/Script/LightMove.cs(11,17): warning CS0649: Field 'LightMove.minTime' is never assigned to, and will always have its default value 0
+5: Assets/Arakawa/Script/LightMove.cs(18,19): warning CS0649: Field 'LightMove.minAngle' is never assigned to, and will always have its default value 0
+6: Assets/Hiramasa/Script/timeManager.cs(10,16): warning CS0649: Field 'timeManager.time' is never assigned to, and will always have its default value null
+
+PDB to MDB conversion skipped
+********************************************************************************
+*                       Friday, 13 January 2017 10:26:02                       *
+********************************************************************************
+CSharpCompilerWrapper.exe version: 2.0.3.30
+Platform: Mac
+Target assembly: Assembly-CSharp-Editor.dll
+Project directory: /Users/nanashi/Documents/LastHopeGames
+Target profile directory: /Applications/Unity/Unity.app/Contents/Mono/lib/mono/2.0
+Unity 'Data' or 'Frameworks' directory: /Applications/Unity/Unity.app/Contents
+Compiler: Microsoft C# 6.0
+
+- Compilation -----------------------------------------------
+
+Process: /Library/Frameworks/Mono.framework/Commands/mono
+Arguments: "/Users/nanashi/Documents/LastHopeGames/CSharp60Support/Roslyn/csc.exe" -nostdlib+ -noconfig -nologo -r:"/Applications/Unity/Unity.app/Contents/Mono/lib/mono/2.0/mscorlib.dll" -r:"/Applications/Unity/Unity.app/Contents/Mono/lib/mono/2.0/System.dll" -r:"/Applications/Unity/Unity.app/Contents/Mono/lib/mono/2.0/System.Core.dll" -r:"/Applications/Unity/Unity.app/Contents/Mono/lib/mono/2.0/System.Xml.dll" @Temp/UnityTempFile-df3e7ce95b4e94a158341bea138114a5 -debug-
+Exit code: 0
+Elapsed time: 1.77 sec
+
+- Compiler output (0 lines):
+
+- Compiler errors (0 lines):
+
+PDB to MDB conversion skipped
