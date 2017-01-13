@@ -3,37 +3,31 @@ using UnityEngine;
 
 public class boxerState : MonoBehaviour
 {
-  private GameObject player1;
-  private Animator player1animator;
+  private GameObject boxer1;
+  private GameObject boxer2;
 
-  private GameObject player2;
-  private Animator player2animator;
+  private Animator boxerAnim1;
+  private Animator boxerAnim2;
 
-  private static AnimatorStateInfo player1State;
-  private static AnimatorStateInfo player2State;
+  private static AnimatorStateInfo boxerState1;
+  private static AnimatorStateInfo boxerState2;
 
-  public static AnimatorStateInfo getPlayer1State()
-  {
-    return player1State;
-  }
-
-  public static AnimatorStateInfo getPlayer2State()
-  {
-    return player2State;
-  }
+  // Return
+  public static AnimatorStateInfo GetBoxerState1 => boxerState1;
+  public static AnimatorStateInfo GetBoxerState2 => boxerState2;
 
   void Start()
   {
-    player1 = GameObject.Find("Boxer1");
-    player1animator = player1.GetComponent<Animator>();
+    boxer1 = GameObject.Find("Boxer1");
+    boxerAnim1 = boxer1.GetComponent<Animator>();
 
-    player2 = GameObject.Find("Boxer2");
-    player2animator = player2.GetComponent<Animator>();
+    boxer2 = GameObject.Find("Boxer2");
+    boxerAnim2 = boxer2.GetComponent<Animator>();
   }
 
   void Update()
   {
-    player1State = player1animator.GetCurrentAnimatorStateInfo(0);
-    player2State = player2animator.GetCurrentAnimatorStateInfo(0);
+    boxerState1 = boxerAnim1.GetCurrentAnimatorStateInfo(0);
+    boxerState2 = boxerAnim2.GetCurrentAnimatorStateInfo(0);
   }
 }

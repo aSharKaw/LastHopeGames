@@ -14,7 +14,7 @@ public class boxerInput : MonoBehaviour
 
   void Update()
   {
-    if (inputManager.GetDownRight1P())
+    if (inputManager.GetDownRight1())
     {
       animator.SetBool("RightPunch", true);
     }
@@ -22,5 +22,13 @@ public class boxerInput : MonoBehaviour
     {
       animator.SetBool("RightPunch", false);
     }
+    //if (inputManager.GetDownRight2P())
+    //{
+    //  animator.SetBool("RightPunch", true);
+    //}
+    //else
+    //{
+    //  animator.SetBool("RightPunch", false);
+    //}
   }
 }
