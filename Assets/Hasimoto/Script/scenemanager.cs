@@ -15,7 +15,7 @@ public class scenemanager : MonoBehaviour
 
     public void Update()
     {
-        if(Input.anyKeyDown)
+        if(inputManager.GetDownRight1() || inputManager.GetDownLeft1())
         {
             push_count++;
             Debug.Log(push_count + "回 押された");
