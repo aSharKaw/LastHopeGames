@@ -7,9 +7,16 @@ public class boxerInput : MonoBehaviour
 {
   private Animator animator;
 
+  [SerializeField]
+  private AudioClip audioClip;
+  private AudioSource audioSource;
+
   void Start()
   {
     animator = GetComponent<Animator>();
+
+    audioSource = GetComponent<AudioSource>();
+    audioSource.clip = audioClip;
   }
 
   void Update()
@@ -17,6 +24,7 @@ public class boxerInput : MonoBehaviour
     if (inputManager.GetDownRight1())
     {
       animator.SetBool("RightPunch", true);
+      audioSource.Play();
     }
     else
     {
