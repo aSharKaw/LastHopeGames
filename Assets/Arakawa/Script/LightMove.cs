@@ -35,7 +35,7 @@ public class LightMove : MonoBehaviour
     void Update()
     {
         transform.Rotate(0, angle, 0, Space.World);
-        Debug.Log(angle);
+        //Debug.Log(angle);
         if (time < count)
         {
             count = 0;
