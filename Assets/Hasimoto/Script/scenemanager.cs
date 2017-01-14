@@ -7,7 +7,7 @@ public class scenemanager : MonoBehaviour
 
     public void toNextScene()
     {
-        SceneManager.LoadScene("Test_scenemanager");
+        SceneManager.LoadScene("Admission");
     }
 
     int push_count = 0;
