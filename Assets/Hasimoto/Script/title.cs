@@ -20,7 +20,7 @@ public class title : MonoBehaviour
         if (pushcount >= 3)
         {
             fadeout f = GetComponent<fadeout>();
-            f.toFadeout();
+            f.toFadeout(0.02f);
             fadeouttime++;
         }
 
@@ -42,7 +42,5 @@ public class title : MonoBehaviour
         {
             resettime++;
         }
-
     }
-
 }
