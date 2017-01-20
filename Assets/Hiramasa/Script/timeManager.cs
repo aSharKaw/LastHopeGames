@@ -18,6 +18,7 @@ public class timeManager : MonoBehaviour
   {
     if (!pauseManager.getPause)
     {
+      
       timeLeft -= Time.deltaTime;
 
       if (timeLeft <= 0.0f && setTime != 0)
@@ -26,6 +27,7 @@ public class timeManager : MonoBehaviour
         setTime -= 1;
         time.text = setTime.ToString();
       }
+
     }
 
 #if false
