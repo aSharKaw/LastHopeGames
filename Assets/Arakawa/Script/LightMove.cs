@@ -19,12 +19,6 @@ public class LightMove : MonoBehaviour
     [SerializeField, Range(0.1f, 5.0f)]
     private float maxAngle;
 
-    /*
-    生成位置はRectLineの位置ランダム1辺2個。初期角度を数パターンから取得
-    spotLightは飛ぶ距離が結構短め。Y位置低めで対応
-    LightBakeのStatic数が多いと正常に焼かれない？最悪壁はいらないけど、あったほうがいいなあ
-         */
-
     void Start()
     {
         time = Random.Range(60 * minTime, 60 * maxTime);
