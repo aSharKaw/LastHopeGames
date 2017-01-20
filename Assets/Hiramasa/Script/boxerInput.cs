@@ -30,13 +30,5 @@ public class boxerInput : MonoBehaviour
     {
       animator.SetBool("RightPunch", false);
     }
-    //if (inputManager.GetDownRight2P())
-    //{
-    //  animator.SetBool("RightPunch", true);
-    //}
-    //else
-    //{
-    //  animator.SetBool("RightPunch", false);
-    //}
   }
 }
