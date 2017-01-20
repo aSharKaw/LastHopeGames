@@ -21,14 +21,19 @@ public class boxerInput : MonoBehaviour
 
   void Update()
   {
-    if (inputManager.GetDownRight1())
+    if (!pauseManager.getPause)
     {
-      animator.SetBool("RightPunch", true);
-      audioSource.Play();
-    }
-    else
-    {
-      animator.SetBool("RightPunch", false);
+      
+      if (inputManager.GetDownRight1())
+      {
+        animator.SetBool("RightPunch", true);
+        audioSource.Play();
+      }
+      else
+      {
+        animator.SetBool("RightPunch", false);
+      }
+
     }
   }
 }

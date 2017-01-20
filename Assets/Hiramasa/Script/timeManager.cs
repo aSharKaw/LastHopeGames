@@ -16,13 +16,16 @@ public class timeManager : MonoBehaviour
 
   void Update()
   {
-    timeLeft -= Time.deltaTime;
-
-    if (timeLeft <= 0.0f && setTime != 0)
+    if (!pauseManager.getPause)
     {
-      timeLeft = 1.0f;
-      setTime -= 1;
-      time.text = setTime.ToString();
+      timeLeft -= Time.deltaTime;
+
+      if (timeLeft <= 0.0f && setTime != 0)
+      {
+        timeLeft = 1.0f;
+        setTime -= 1;
+        time.text = setTime.ToString();
+      }
     }
 
 #if false
@@ -30,5 +33,6 @@ public class timeManager : MonoBehaviour
     if (Input.GetKeyDown(KeyCode.T)) setTime = 10;
 
 #endif
+
   }
 }

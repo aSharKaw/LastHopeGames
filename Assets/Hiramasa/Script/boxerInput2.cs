@@ -14,13 +14,18 @@ public class boxerInput2 : MonoBehaviour
 
   void Update()
   {
-    if (inputManager.GetDownRight2())
+    if (!pauseManager.getPause)
     {
-      anim.SetBool("RightPunch2", true);
-    }
-    else
-    {
-      anim.SetBool("RightPunch2", false);
+      
+      if (inputManager.GetDownRight2())
+      {
+        anim.SetBool("RightPunch2", true);
+      }
+      else
+      {
+        anim.SetBool("RightPunch2", false);
+      }
+
     }
   }
 }
