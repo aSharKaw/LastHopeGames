@@ -4,8 +4,8 @@ using UnityEngine.UI;
 
 public class fadeout : MonoBehaviour
 {
-    float alpha = 0;
-    float red, green, blue;
+    public float alpha = 0;
+    private float red, green, blue;
 
     public void toFadeout(float speed)
     {

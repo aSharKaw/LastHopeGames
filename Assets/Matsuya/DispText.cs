@@ -1,7 +1,7 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class DispText : MonoBehaviour
 {
@@ -27,6 +27,13 @@ public class DispText : MonoBehaviour
     //リセットまでの時間
     private int resettime = 0;
 
+
+    //音の出るとこ
+    private AudioSource _audioSource;
+    //サウンドクリップ
+    [SerializeField]
+    private AudioClip[] _clip;
+
     //初期化
     void Awake()
     {
@@ -34,6 +41,9 @@ public class DispText : MonoBehaviour
         _text = gameObject.GetComponent<Text>();
         Light_1.SetActive(false);
         Light_2.SetActive(false);
+
+        //ついているソースを引っ張る
+        _audioSource = gameObject.GetComponent<AudioSource>();
     }
 
     //毎フレーム更新
@@ -52,12 +62,22 @@ public class DispText : MonoBehaviour
                 Light_2.SetActive(false);
             }
             //押されたらコルーチン起動
-            if (Input.anyKeyDown) StartCoroutine("Push");
+            if (Input.anyKeyDown)
+            {
+                StartCoroutine("Push");
+            }
         }
         else
         {
+            //フェードアウトを起動
             fadeout f = fadeObj.GetComponent<fadeout>();
             f.toFadeout(0.02f);
+
+            //フェードアウト完了でシーン遷移
+            if(f.alpha >= 1.0f)
+            {
+//               SceneManager.LoadScene("Admisson");
+            }
             resettime = 0;
         }
 
@@ -77,10 +97,15 @@ public class DispText : MonoBehaviour
     {
         pushcount++;
         Debug.Log(pushcount + "回押された");
+        _audioSource.clip = _clip[pushcount-1];
+        _audioSource.Play();
+
+        //放置対策をりせっと
         resettime = 0;
         //ライトオン
         Light_1.SetActive(true);
-        if(pushcount == 1) yield break;
+
+        if (pushcount == 1) yield break;
         //ライトオン
         Light_2.SetActive(true);
         if (pushcount == 2) yield break;
