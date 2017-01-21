@@ -18,7 +18,7 @@ public class boxerState : MonoBehaviour
 
   void Start()
   {
-    boxer1 = GameObject.Find("Boxer1");
+    boxer1 = GameObject.Find("Boxer");
     boxerAnim1 = boxer1.GetComponent<Animator>();
 
     boxer2 = GameObject.Find("Boxer2");
