@@ -11,8 +11,8 @@ public class EventManager : MonoBehaviour {
 
     [SerializeField]
     private GameObject spown1PPoint;
-    [SerializeField]
-    private GameObject defaultLight;
+    //[SerializeField]
+    //private GameObject defaultLight;
     [SerializeField]
     private GameObject enterLights;
     [SerializeField]
@@ -52,7 +52,7 @@ public class EventManager : MonoBehaviour {
 
             if(_objectFolder = EditorGUILayout.Foldout(_objectFolder, "Objects"))
             {
-                _editor.defaultLight = EditorGUILayout.ObjectField("初期ライト", _editor.defaultLight, typeof(GameObject), true) as GameObject;
+                //_editor.defaultLight = EditorGUILayout.ObjectField("初期ライト", _editor.defaultLight, typeof(GameObject), true) as GameObject;
                 _editor.enterLights = EditorGUILayout.ObjectField("入場開始時ライト", _editor.enterLights, typeof(GameObject), true) as GameObject;
                 _editor.battleLights = EditorGUILayout.ObjectField("バトル用ライト", _editor.battleLights, typeof(GameObject), true) as GameObject;
                 _editor.player1Obj = EditorGUILayout.ObjectField("1Pオブジェクト", _editor.player1Obj, typeof(GameObject), true) as GameObject;
@@ -75,13 +75,6 @@ public class EventManager : MonoBehaviour {
     }
 #endif
 
-    /*
-    カメラは２つ。動作は同じ。（マルチウィンドウ用）
-
-    リングに2人を並べる。ライトをバトル用へ。リングを回るようなカメラワーク。
-    シーン遷移→メイン
-    */
-    
     void Start ()
     {
         audioSource = gameObject.GetComponent<AudioSource>();
