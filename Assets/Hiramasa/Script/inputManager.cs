@@ -63,18 +63,18 @@ public class inputManager : MonoBehaviour
     else { return false; }
   }
 
-#if false
+#if true
 
-  private uint count = 0;
+  private int count = 0;
 
   void Update()
   {
-    if (GetDownLeft1()) { Debug.Log("GetDownLeft1 " + count++.ToString()); }
-    if (GetDownRight1()) { Debug.Log("GetDownRight1 " + count++.ToString()); }
-    if (GetDownStart1()) { Debug.Log("GetDownStart1 " + count++.ToString()); }
-    if (GetDownLeft2()) { Debug.Log("GetDownLeft2 " + count++.ToString()); }
-    if (GetDownRight2()) { Debug.Log("GetDownRight2 " + count++.ToString()); }
-    if (GetDownStart2()) { Debug.Log("GetDownStart2 " + count++.ToString()); }
+    if (GetDownLeft1()) { Debug.Log($"GetLeft1 + {++count}"); }
+    if (GetDownRight1()) { Debug.Log($"GetRight1 + {++count}"); }
+    if (GetDownStart1()) { Debug.Log($"GetStart1 + {++count}"); }
+    if (GetDownLeft2()) { Debug.Log($"GetLeft2 + {++count}");}
+    if (GetDownRight2()) { Debug.Log($"GetRight2 + {++count}"); }
+    if (GetDownStart2()) { Debug.Log($"GetStart2 + {++count}"); }
   }
 
 #endif
