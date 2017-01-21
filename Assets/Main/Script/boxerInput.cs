@@ -24,7 +24,7 @@ public class boxerInput : MonoBehaviour
     if (!pauseManager.getPause)
     {
       
-      if (inputManager.GetDownRight1())
+      if (inputManager.GetDownRight1() && !inputManager.GetDownLeft1())
       {
         animator.SetBool("RightPunch", true);
         audioSource.Play();
@@ -32,6 +32,26 @@ public class boxerInput : MonoBehaviour
       else
       {
         animator.SetBool("RightPunch", false);
+      }
+      if (inputManager.GetDownLeft1() && !inputManager.GetDownRight1())
+      {
+        animator.SetBool("LeftPunch", true);
+        audioSource.Play();
+      }
+      else
+      {
+        animator.SetBool("LeftPunch", false);
+      }
+      if (inputManager.GetDownLeft1() && inputManager.GetDownRight1())
+      {
+        animator.SetBool("Guard", true);
+        audioSource.Play();
+
+        Debug.Log(123);
+      }
+      else
+      {
+        animator.SetBool("Guard", false);
       }
 
     }

@@ -18,7 +18,7 @@ public class hpManager : MonoBehaviour
       && boxerState.GetBoxerState2.IsName("Base Layer.Idle"))
     {
       // 2P
-      hpBar[1].fillAmount -= 0.005f;
+      hpBar[1].fillAmount -= 0.001f;
     }
   }
 }
