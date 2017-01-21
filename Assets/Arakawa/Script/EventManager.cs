@@ -8,122 +8,64 @@ using UnityEditor;
 #endif
 
 public class EventManager : MonoBehaviour {
-
-    [SerializeField]
-    private GameObject spown1PPoint;
-    //[SerializeField]
-    //private GameObject defaultLight;
-    [SerializeField]
-    private GameObject enterLights;
-    [SerializeField]
-    private GameObject battleLights;
-    [SerializeField]
-    private GameObject player1Obj, player2Obj;
-
-    [SerializeField]
-    private AudioClip entranceSE;
-    [SerializeField]
-    private AudioClip cheer;
     
-    private AudioSource audioSource;
+    //他スクリプトで使うからpublicで
+    [SerializeField]
+    public int firstLightTime = 2;
+    [SerializeField]
+    public int secondLightTime = 8;
+    [SerializeField]
+    public int thirdLightTime = 8;
+    [SerializeField]
+    public int firstCameraTime = 6;
+    [SerializeField]
+    public int secondCameraTime = 3;
+    [SerializeField]
+    public int thirdCameraTime = 3;
 
-    [SerializeField]
-    private int firstTime = 2;
-    [SerializeField]
-    private int secondTime = 4;
-    [SerializeField]
-    private int thirdTime = 2;
+    private int fullCount;
+    private int count;
 
-    [System.NonSerialized]
-    private int _firstCount = 0, _secondCount = 0, _thirdCount = 0;
-    
+
 #if UNITY_EDITOR//プランナー向けにInspector拡張
     [CustomEditor(typeof(EventManager))]
     public class EventEditer : Editor
     {
-        private bool _objectFolder = false;
-        private bool _audioFolder = false;
-        private bool _timeFolder = false;
-
+        private bool _lightTimeFolder = false;
+        private bool _cameraTimeFolder = false;
 
         public override void OnInspectorGUI()
         {
             EventManager _editor = target as EventManager;
 
-            if(_objectFolder = EditorGUILayout.Foldout(_objectFolder, "Objects"))
+            if(_lightTimeFolder = EditorGUILayout.Foldout(_lightTimeFolder, "LightTimer"))
             {
-                //_editor.defaultLight = EditorGUILayout.ObjectField("初期ライト", _editor.defaultLight, typeof(GameObject), true) as GameObject;
-                _editor.enterLights = EditorGUILayout.ObjectField("入場開始時ライト", _editor.enterLights, typeof(GameObject), true) as GameObject;
-                _editor.battleLights = EditorGUILayout.ObjectField("バトル用ライト", _editor.battleLights, typeof(GameObject), true) as GameObject;
-                _editor.player1Obj = EditorGUILayout.ObjectField("1Pオブジェクト", _editor.player1Obj, typeof(GameObject), true) as GameObject;
-                _editor.player2Obj = EditorGUILayout.ObjectField("2Pオブジェクト", _editor.player2Obj, typeof(GameObject), true) as GameObject;
+                _editor.firstLightTime = EditorGUILayout.IntField("ライト無し時間", _editor.firstLightTime);
+                _editor.secondLightTime = EditorGUILayout.IntField("入場演出ライト時間", _editor.secondLightTime);
+                _editor.thirdLightTime = EditorGUILayout.IntField("バトルライト時間", _editor.thirdLightTime);
             }
 
-            if(_audioFolder = EditorGUILayout.Foldout(_audioFolder, "Audios"))
+            if (_cameraTimeFolder = EditorGUILayout.Foldout(_cameraTimeFolder, "CameraTimer"))
             {
-                _editor.entranceSE = EditorGUILayout.ObjectField("入場ジングル", _editor.entranceSE, typeof(AudioClip), false) as AudioClip;
-                _editor.cheer = EditorGUILayout.ObjectField("歓声SE", _editor.cheer, typeof(AudioClip), false)as AudioClip;
-            }
-
-            if(_timeFolder = EditorGUILayout.Foldout(_timeFolder, "Times"))
-            {
-                _editor.firstTime = EditorGUILayout.IntField("初期演出時間", _editor.firstTime);
-                _editor.secondTime = EditorGUILayout.IntField("入場演出時間", _editor.secondTime);
-                _editor.thirdTime = EditorGUILayout.IntField("選手注目時間", _editor.thirdTime);
+                _editor.firstCameraTime = EditorGUILayout.IntField("初期カメラ時間", _editor.firstCameraTime);
+                _editor.secondCameraTime = EditorGUILayout.IntField("選手注目時間", _editor.secondCameraTime);
+                _editor.thirdCameraTime = EditorGUILayout.IntField("バトル演出カメラ時間", _editor.thirdCameraTime);
             }
         }
     }
 #endif
 
-    void Start ()
+    void Start()
     {
-        audioSource = gameObject.GetComponent<AudioSource>();
+        fullCount = firstLightTime + secondLightTime + thirdLightTime + firstCameraTime + secondCameraTime + thirdCameraTime;
     }
 
-    void Update ()
+    void Updata()
     {
-        if(_firstCount < firstTime * 60)
-        {
-            if (_firstCount == 0)
-            {
-                //ガヤガヤ
-
-            }
-
-            _firstCount++;
-        }
-        else if(_secondCount < secondTime * 60)
-        {
-            if (_secondCount == 0)
-            {
-                //登場ジングル
-                audioSource.PlayOneShot(entranceSE);
-
-                Instantiate(enterLights);
-            }
-
-            _secondCount++;
-        }
-        else if(_thirdCount < thirdTime * 60)
-        {
-            
-            if (_thirdCount == 0)
-            {
-      　        Destroy(GameObject.Find("tmpSpotLight(Clone)"));
-
-                //歓声
-                audioSource.PlayOneShot(cheer);
-
-                Instantiate(battleLights);
-                Instantiate(player1Obj);
-                Instantiate(player2Obj);
-            }
-
-            _thirdCount++;
-        }
-        else
+        if(count > fullCount)
         {
             SceneManager.LoadScene("test");
         }
+        count++;
     }
 }
