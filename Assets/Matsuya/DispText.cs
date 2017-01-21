@@ -76,7 +76,7 @@ public class DispText : MonoBehaviour
             //フェードアウト完了でシーン遷移
             if(f.alpha >= 1.0f)
             {
-//               SceneManager.LoadScene("Admisson");
+               SceneManager.LoadScene("Admission");
             }
             resettime = 0;
         }
