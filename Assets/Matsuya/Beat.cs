@@ -3,11 +3,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class DispText : MonoBehaviour
+public class Beat : MonoBehaviour
 {
-    //フェードパネル
-    [SerializeField]
-    private GameObject fadeObj;
     //文字を取得
     private Text _text;
 
@@ -27,12 +24,20 @@ public class DispText : MonoBehaviour
     //リセットまでの時間
     private int resettime = 0;
 
-
     //音の出るとこ
     private AudioSource _audioSource;
+
     //サウンドクリップ
     [SerializeField]
-    private AudioClip[] _clip;
+    private AudioClip _lightClip;
+    [SerializeField]
+    private AudioClip _buzzerClip;
+
+    //プレイヤー選択
+    [SerializeField]
+    private bool _playerSelect;
+    //終了判定
+    public bool endbool;
 
     //初期化
     void Awake()
@@ -43,13 +48,15 @@ public class DispText : MonoBehaviour
         Light_2.SetActive(false);
 
         //ついているソースを引っ張る
-        _audioSource = gameObject.GetComponent<AudioSource>();
+        _audioSource =
+            gameObject.GetComponent<AudioSource>();
+
+        endbool = false;
     }
 
     //毎フレーム更新
     void Update()
     {
-        Debug.Log(resettime);
         //三回以下なら終了
         if (pushcount < 3)
         {
@@ -62,22 +69,23 @@ public class DispText : MonoBehaviour
                 Light_2.SetActive(false);
             }
             //押されたらコルーチン起動
-            if (Input.anyKeyDown)
+            if (_playerSelect == true)
             {
-                StartCoroutine("Push");
+                if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D))
+                {
+                    StartCoroutine("Push");
+                }
+            }
+            if (_playerSelect == false)
+            {
+                if (Input.GetKeyDown(KeyCode.J) || Input.GetKeyDown(KeyCode.L))
+                {
+                    StartCoroutine("Push");
+                }
             }
         }
         else
         {
-            //フェードアウトを起動
-            fadeout f = fadeObj.GetComponent<fadeout>();
-            f.toFadeout(0.02f);
-
-            //フェードアウト完了でシーン遷移
-            if(f.alpha >= 1.0f)
-            {
-               SceneManager.LoadScene("Admission");
-            }
             resettime = 0;
         }
 
@@ -89,7 +97,10 @@ public class DispText : MonoBehaviour
             _speed = _speed * -1;
         }
         //α値を弄り続ける
-        _text.color = new Color(_text.color.r, _text.color.g, _text.color.b, toColor + _speed);
+        _text.color = new Color(_text.color.r,
+            _text.color.g,
+            _text.color.b,
+            toColor + _speed);
     }
 
     //押された時の処理
@@ -97,17 +108,25 @@ public class DispText : MonoBehaviour
     {
         pushcount++;
         Debug.Log(pushcount + "回押された");
-        _audioSource.clip = _clip[pushcount-1];
-        _audioSource.Play();
 
+        //音を再生
+        if (pushcount <= 2)
+        {
+            _audioSource.PlayOneShot(_lightClip);
+        }
         //放置対策をりせっと
         resettime = 0;
         //ライトオン
         Light_1.SetActive(true);
-
         if (pushcount == 1) yield break;
         //ライトオン
         Light_2.SetActive(true);
+        if (pushcount == 2) yield break;
+
+        //三回目ならブザー
+        _audioSource.PlayOneShot(_buzzerClip);
+        endbool = true;
+        Debug.Log("終わったよ！");
         if (pushcount == 2) yield break;
     }
 }

@@ -16,4 +16,9 @@ public class fadeout : MonoBehaviour
         GetComponent<Image>().color = new Color(red, green, blue, alpha);
         alpha += speed;
     }
+
+    public void reset()
+    {
+        alpha = 0;
+    }
 }
