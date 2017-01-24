@@ -54,7 +54,7 @@ public class boxerInput2 : MonoBehaviour
       {
         if (boxerState.GetBoxerState1.IsName("Base Layer.Guard"))
         {
-          anim.SetBool("Counter", true);
+          anim.SetBool("Counter2", true);
         }
       }
       // ダウン
