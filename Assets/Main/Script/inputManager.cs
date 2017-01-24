@@ -63,7 +63,7 @@ public class inputManager : MonoBehaviour
     else { return false; }
   }
 
-#if true
+#if false
 
   private int count = 0;
 
