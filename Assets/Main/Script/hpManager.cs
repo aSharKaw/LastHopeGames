@@ -49,6 +49,6 @@ public class hpManager : MonoBehaviour
     hp1 = hpBar[0].fillAmount;
     hp2 = hpBar[1].fillAmount;
 
-    Debug.Log(boxerInput2.getCount2);
+    //Debug.Log(boxerInput2.getCount2);
   }
 }
