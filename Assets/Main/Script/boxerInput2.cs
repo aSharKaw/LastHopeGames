@@ -58,23 +58,14 @@ public class boxerInput2 : MonoBehaviour
         }
       }
       // ダウン
-      if(hpManager.hp2 <= 0)
+      if (hpManager.hp2 <= 0)
       {
         anim.SetBool("Down2", true);
       }
       // リターン
-      if (hpManager.hp2 == 0.0f)
+      if (countManager.getCount == 100)
       {
-        if (inputManager.GetDownRight2()
-        || inputManager.GetDownLeft2())
-        {
-          count2++;
-          Debug.Log($"count = {count2}");
-        }
-        if(count2 == 100)
-        {
-          anim.SetBool("Reborn2", true);
-        }
+        anim.SetBool("Reborn2", true);
       }
     }
   }
