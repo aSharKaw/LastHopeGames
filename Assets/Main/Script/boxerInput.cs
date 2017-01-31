@@ -1,7 +1,5 @@
 ﻿
 using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
 
 public class boxerInput : MonoBehaviour
 {
@@ -22,7 +20,7 @@ public class boxerInput : MonoBehaviour
   void Update()
   {
     // ポーズ中ならUpdate()を実行しない
-    if (!pauseManager.getPause)
+    if (!pauseManager.getPause())
     {
       anim.SetBool("Counter", false);
       anim.SetBool("RightPunch", false);
@@ -32,7 +30,7 @@ public class boxerInput : MonoBehaviour
       // 左パンチ
       if (inputManager.GetDownLeft1()
         && !inputManager.GetDownRight1()
-        && !boxerState.GetBoxerState2.IsName("Base Layer.Guard"))
+        && !boxerState.GetBoxerState2().IsName("Base Layer.Guard"))
       {
         anim.SetBool("LeftPunch", true);
         audioSource.Play();
@@ -40,7 +38,7 @@ public class boxerInput : MonoBehaviour
       // 右パンチ
       if (inputManager.GetDownRight1()
         && !inputManager.GetDownLeft1()
-        && !boxerState.GetBoxerState2.IsName("Base Layer.Guard"))
+        && !boxerState.GetBoxerState2().IsName("Base Layer.Guard"))
       {
         anim.SetBool("RightPunch", true);
       }
@@ -54,7 +52,7 @@ public class boxerInput : MonoBehaviour
       if (inputManager.GetDownRight1()
         || inputManager.GetDownLeft1())
       {
-        if (boxerState.GetBoxerState2.IsName("Base Layer.Guard"))
+        if (boxerState.GetBoxerState2().IsName("Base Layer.Guard"))
         {
           anim.SetBool("Counter", true);
         }
