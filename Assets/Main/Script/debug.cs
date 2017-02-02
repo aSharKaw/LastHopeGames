@@ -1,7 +1,7 @@
 ﻿
 using UnityEngine;
 
-public class test : MonoBehaviour
+public class debug : MonoBehaviour
 {
   void Start()
   {
