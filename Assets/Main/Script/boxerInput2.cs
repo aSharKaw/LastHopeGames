@@ -11,6 +11,7 @@ public class boxerInput2 : MonoBehaviour
   }
   void Update()
   {
+    // ポーズ中じゃなければ実行
     if (!pauseManager.getPause())
     {
       anim.SetBool("LeftPunch2", false);
@@ -56,7 +57,7 @@ public class boxerInput2 : MonoBehaviour
       }
       // リターン
       if (countManager.Count == 10
-        && rebornManager.Count != 0
+        && rebornManager.Count2 != 0
         && !boxerState.GetBoxerState2().IsName("Base Layer.Reborn"))
       {
         anim.SetBool("Reborn2", true);
