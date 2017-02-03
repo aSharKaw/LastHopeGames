@@ -9,19 +9,19 @@ using UnityEditor;
 
 public class EventManager : MonoBehaviour {
     
-    //他スクリプトで使うからpublicで
+    //他スクリプトで使うからとりあえずpublicで
     [SerializeField]
-    public int firstLightTime = 2;
+    public int firstLightTime;
     [SerializeField]
-    public int secondLightTime = 8;
+    public int secondLightTime;
     [SerializeField]
-    public int thirdLightTime = 8;
+    public int thirdLightTime;
     [SerializeField]
-    public int firstCameraTime = 6;
+    public int firstCameraTime;
     [SerializeField]
-    public int secondCameraTime = 3;
+    public int secondCameraTime;
     [SerializeField]
-    public int thirdCameraTime = 3;
+    public int thirdCameraTime;
 
     private int fullCount;
     private int count;
@@ -57,15 +57,25 @@ public class EventManager : MonoBehaviour {
 
     void Start()
     {
-        fullCount = firstLightTime + secondLightTime + thirdLightTime + firstCameraTime + secondCameraTime + thirdCameraTime;
+        if(firstLightTime + secondLightTime + thirdLightTime > firstCameraTime + secondCameraTime + thirdCameraTime)
+        {
+            fullCount = firstLightTime + secondLightTime + thirdLightTime;
+        }
+        else
+        {
+            fullCount = firstCameraTime + secondCameraTime + thirdCameraTime;
+        }
+        Debug.Log("Start通った");
     }
 
     void Updata()
     {
-        if(count > fullCount)
+        if (count > fullCount)
         {
-            SceneManager.LoadScene("test");
+            Debug.Log("終わったよ");
+            SceneManager.LoadScene("main");
         }
         count++;
+        Debug.Log(fullCount + " / " + count);
     }
 }
