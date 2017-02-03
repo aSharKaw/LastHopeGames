@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class timeManager : MonoBehaviour
 {
   [SerializeField]
-  private Text time;
+  private Text[] time;
 
   private static int setTime = 60;
   private float timeLeft = 0.0f;
@@ -23,7 +23,8 @@ public class timeManager : MonoBehaviour
       {
         timeLeft = 1.0f;
         setTime -= 1;
-        time.text = setTime.ToString();
+        time[0].text = setTime.ToString();
+        time[1].text = time[0].text; // TimeUI2に無理やり突っ込む
       }
     }
 
