@@ -29,7 +29,10 @@ public class LightManager : MonoBehaviour
 
     private AudioSource audioSource;
 
-    EventManager EM;
+    EventManager manager;
+
+    //private Material material1P;
+    //private Material material2P;
 
     private int firstTime;
     private int secondTime;
@@ -73,12 +76,12 @@ public class LightManager : MonoBehaviour
 
     void Start()
     {
-        EM = GetComponent<EventManager>();
+        manager = GetComponent<EventManager>();
         audioSource = gameObject.GetComponent<AudioSource>();
 
-        firstTime = EM.firstLightTime;
-        secondTime = EM.secondLightTime;
-        thirdTime = EM.thirdLightTime;
+        firstTime = manager.firstLightTime;
+        secondTime = manager.secondLightTime;
+        thirdTime = manager.thirdLightTime;
     }
 
     public void firstLightEvent()
