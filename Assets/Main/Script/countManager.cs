@@ -1,34 +1,26 @@
 ﻿
 using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
 
 public class countManager : MonoBehaviour
 {
-  [SerializeField]
-  private static int count; // 増やすと復帰のときのカンストを減らす
-  public static int getCount => count;
+  public static int Count = 0; // 復帰に必要な叩く回数
 
   void Update()
   {
-    if (hpManager.hp1 == 0.0f)
-    {
-      if (inputManager.GetDownRight1()
-      || inputManager.GetDownLeft1())
-      {
-        count++;
-        Debug.Log($"count1 = {count}");
-      }
-    }
+    M(hpManager.hp1,
+      inputManager.GetDownLeft1(),
+      inputManager.GetDownRight1());
 
-    if (hpManager.hp2 == 0.0f)
+    M(hpManager.hp2,
+      inputManager.GetDownLeft2(),
+      inputManager.GetDownRight2());
+  }
+
+  void M(float hp, bool f1, bool f2)
+  {
+    if (hp == 0.0f)
     {
-      if (inputManager.GetDownRight2()
-      || inputManager.GetDownLeft2())
-      {
-        count++;
-        Debug.Log($"count2 = {count}");
-      }
+      if (f1 || f2) { Count++; }
     }
   }
 }

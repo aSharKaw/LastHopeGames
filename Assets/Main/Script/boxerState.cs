@@ -13,8 +13,8 @@ public class boxerState : MonoBehaviour
   private static AnimatorStateInfo boxerState2;
 
   // Return
-  public static AnimatorStateInfo GetBoxerState1 => boxerState1;
-  public static AnimatorStateInfo GetBoxerState2 => boxerState2;
+  public static AnimatorStateInfo GetBoxerState1() { return boxerState1; }
+  public static AnimatorStateInfo GetBoxerState2() { return boxerState2; }
 
   void Start()
   {
