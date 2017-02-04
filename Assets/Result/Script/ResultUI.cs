@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class ResultUI : MonoBehaviour {
 
+    //とりあえず
+
+
 	// Use this for initialization
 	void Start () {
 		

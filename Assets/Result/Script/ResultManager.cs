@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ResultManager : MonoBehaviour {
 
@@ -20,6 +21,8 @@ public class ResultManager : MonoBehaviour {
     private float player1HP = 1;
     private float player2HP;
 
+    
+
     [SerializeField]
     private int cameraRotateSpeed;
 
@@ -28,8 +31,12 @@ public class ResultManager : MonoBehaviour {
     [SerializeField]
     private GameObject camera1P, camera2P;
 
-    private int winner;
     
+
+    private int winner;
+
+    private int count;
+    private int limitCount = 8 * 60;
 
     void Start ()
     {
@@ -57,6 +64,11 @@ public class ResultManager : MonoBehaviour {
 
     void Update ()
     {
+        if(count > limitCount)
+        {
+            SceneManager.LoadScene("Title");
+        }
         cameraManager.cameraUpdate(cameraRotateSpeed, ref camera1P, ref camera2P);
+        count++;
 	}
 }
