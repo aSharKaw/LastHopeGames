@@ -39,6 +39,8 @@ public class TitleSequence : MonoBehaviour
     //注意書き時間
     [SerializeField]
     private float warningTime;
+    [SerializeField]
+    private float titleLoopTime;
 
     //回転速度
     [SerializeField]
@@ -143,8 +145,8 @@ public class TitleSequence : MonoBehaviour
                 //終了していない状態で
                 if (!_beat.endbool)
                 {
-                    //一分間放置でやり直し
-                    if (switchCount >= 60 * 10)
+                    //指定時間放置でやり直し
+                    if (switchCount >= titleLoopTime * 60)
                     {
                         //判定を消しておく
                         _JudgeObj.SetActive(false);
