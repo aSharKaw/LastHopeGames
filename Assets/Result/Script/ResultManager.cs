@@ -36,7 +36,8 @@ public class ResultManager : MonoBehaviour {
     private int winner;
 
     private int count;
-    private int limitCount = 8 * 60;
+    [SerializeField]
+    private int limitCount = 10;
 
     void Start ()
     {
@@ -64,7 +65,7 @@ public class ResultManager : MonoBehaviour {
 
     void Update ()
     {
-        if(count > limitCount)
+        if(count > limitCount * 60)
         {
             SceneManager.LoadScene("Title");
         }
