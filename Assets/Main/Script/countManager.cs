@@ -5,6 +5,8 @@ public class countManager : MonoBehaviour
 {
   public static int Count = 0; // 復帰に必要な叩く回数
 
+  private float timeLeft = 1.0f; // 後で直す
+
   void Update()
   {
     M(hpManager.hp1,
@@ -14,6 +16,20 @@ public class countManager : MonoBehaviour
     M(hpManager.hp2,
       inputManager.GetDownLeft2(),
       inputManager.GetDownRight2());
+
+    if (Count >= 10)
+    {
+      timeLeft -= Time.deltaTime;
+      if (timeLeft <= 0.0f)
+      {
+        timeLeft = 1.0f;
+      }
+      if (timeLeft <= 0.5f)
+      {
+        Count = 0;
+        Debug.Log("Countが初期化されました"); // 通ってる
+      }
+    }
   }
 
   void M(float hp, bool f1, bool f2)

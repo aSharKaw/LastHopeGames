@@ -77,6 +77,8 @@ public class hpManager : MonoBehaviour
       Return(ref rebornManager.Count2, 2, 1, 0.5f);
       Return(ref rebornManager.Count2, 1, 1, 0.25f);
     }
+
+    Debug.Log(rebornManager.Count2);
   }
 
   // 復帰
@@ -86,7 +88,7 @@ public class hpManager : MonoBehaviour
       && returncount == limit)
     {
       hpBar[player].fillAmount = hp;
-      countManager.Count = 0;
+      //countManager.Count = 0;
       returncount--;
     }
   }
