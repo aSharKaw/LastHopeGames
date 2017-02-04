@@ -53,13 +53,15 @@ public class boxerInput : MonoBehaviour
       // ダウン
       if (hpManager.hp1 <= 0)
       {
-        anim.SetBool("Down", true);
+                anim.SetBool("Down", true);
+              //  anim.SetTrigger("Down");
       }
       // リターン
-      if (countManager.Count == 10
+      if (countManager.Count >= 10
         && rebornManager.Count != 0
         && !boxerState.GetBoxerState1().IsName("Base Layer.Reborn"))
       {
+        Debug.Log("12gubhjmhgfrghj3");
         anim.SetBool("Reborn", true);
       }
     }
