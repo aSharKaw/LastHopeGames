@@ -5,16 +5,14 @@ using UnityEngine.UI;
 public class hpManager : MonoBehaviour
 {
   [SerializeField]
-  private Image[] hpBar;
+  Image[] hpBar;
+
+  public static float hp1, hp2;
 
   [SerializeField]
-  private float punchDamage = 0.005f;
+  float punchDamage = 0.005f;
   [SerializeField]
-  private float punchDamageCounter = 0.0075f;
-
-  private static float hp1, hp2;
-  public static float getHP1() { return hp1; }
-  public static float getHP2() { return hp2; }
+  float punchDamageCounter = 0.0075f;
 
   void Update()
   {
@@ -25,5 +23,11 @@ public class hpManager : MonoBehaviour
     // Display1のUI表示をDisplay2にも反映させる
     hpBar[2].fillAmount = hpBar[1].fillAmount;
     hpBar[3].fillAmount = hpBar[0].fillAmount;
+
+    // 1Pが左パンチ
+    if (boxerState.Left1 && boxerState.Idle2)
+    {
+      hpBar[1].fillAmount -= punchDamage;
+    }
   }
 }

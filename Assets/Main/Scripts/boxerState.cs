@@ -4,13 +4,15 @@ using UnityEngine;
 public class boxerState : MonoBehaviour
 {
   [SerializeField]
-  private GameObject[] boxer;
+  GameObject[] boxer;
 
-  private Animator anim1, anim2;
-  private static AnimatorStateInfo animState1, animState2;
+  Animator anim1, anim2;
 
-  public static AnimatorStateInfo GetAnimState1() { return animState1; }
-  public static AnimatorStateInfo GetAnimState2() { return animState2; }
+  static AnimatorStateInfo animState1, animState2;
+
+  public static bool Idle1, Idle2;
+  public static bool Left1, Left2;
+  public static bool Right1, Right2;
 
   void Start()
   {
@@ -22,5 +24,12 @@ public class boxerState : MonoBehaviour
   {
     animState1 = anim1.GetCurrentAnimatorStateInfo(0);
     animState2 = anim2.GetCurrentAnimatorStateInfo(0);
+
+    Idle1 = animState1.IsName("Base Layer.Idle");
+    Idle2 = animState2.IsName("Base Layer.Idle");
+    Left1 = animState1.IsName("Base Layer.Left");
+    Left2 = animState2.IsName("Base Layer.Left");
+    Right1 = animState1.IsName("Base Layer.Right");
+    Right2 = animState2.IsName("Base Layer.Right");
   }
 }
