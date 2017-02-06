@@ -10,6 +10,7 @@ public class boxerState : MonoBehaviour
 
   static AnimatorStateInfo animState1, animState2;
 
+  // 1Pまたは2Pが特定のモーション中かどうか判定できる
   public static bool Idle1, Idle2;
   public static bool Left1, Left2;
   public static bool Right1, Right2;
