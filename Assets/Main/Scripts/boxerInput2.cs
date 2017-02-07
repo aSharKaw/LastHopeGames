@@ -16,7 +16,7 @@ public class boxerInput2 : MonoBehaviour
     if (inputManager.GetDownLeft2()
       && !inputManager.GetDownRight2())
     {
-      if (!boxerState.Left2)
+      if (!boxerState.Left2 && !boxerState.Down2 && !boxerState.Down1)
       {
         anim.SetBool("Left", true);
         soundManager.Instance.PlaySE(5);
@@ -28,7 +28,7 @@ public class boxerInput2 : MonoBehaviour
     if (inputManager.GetDownRight2()
       && !inputManager.GetDownLeft2())
     {
-      if (!boxerState.Right2)
+      if (!boxerState.Right2 && !boxerState.Down2 && !boxerState.Down1)
       {
         anim.SetBool("Right", true);
         soundManager.Instance.PlaySE(4);
