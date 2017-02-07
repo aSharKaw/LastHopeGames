@@ -12,54 +12,58 @@ public class boxerInput1 : MonoBehaviour
 
   void Update()
   {
-    // 左パンチ
-    if (inputManager.GetDownLeft1()
-      && !inputManager.GetDownRight1())
+    // 2Pがダウンしてるときは全て無効化
+    if (!boxerState.Down2)
     {
-      if (!boxerState.Left1 && !boxerState.Down1 && !boxerState.Down2)
+      // 左パンチ
+      if (inputManager.GetDownLeft1()
+        && !inputManager.GetDownRight1())
       {
-        anim.SetBool("Left", true);
-        soundManager.Instance.PlaySE(5);
+        if (!boxerState.Left1 && !boxerState.Down1)
+        {
+          anim.SetBool("Left", true);
+          soundManager.Instance.PlaySE(5);
+        }
       }
-    }
-    else { anim.SetBool("Left", false); }
+      else { anim.SetBool("Left", false); }
 
-    // 右パンチ
-    if (inputManager.GetDownRight1()
-      && !inputManager.GetDownLeft1())
-    {
-      if (!boxerState.Right1 && !boxerState.Down1 && !boxerState.Down2)
+      // 右パンチ
+      if (inputManager.GetDownRight1()
+        && !inputManager.GetDownLeft1())
       {
-        anim.SetBool("Right", true);
-        soundManager.Instance.PlaySE(4);
+        if (!boxerState.Right1 && !boxerState.Down1)
+        {
+          anim.SetBool("Right", true);
+          soundManager.Instance.PlaySE(4);
+        }
       }
-    }
-    else { anim.SetBool("Right", false); }
+      else { anim.SetBool("Right", false); }
 
-    // ガード
-    if (inputManager.GetDownLeft1()
-      && inputManager.GetDownRight1())
-    {
-      anim.SetBool("Guard", true);
-    }
-    else { anim.SetBool("Guard", false); }
-
-    // カウンター
-    if (inputManager.GetDownLeft1()
-      || inputManager.GetDownRight1())
-    {
-      if (boxerState.Guard2)
+      // ガード
+      if (inputManager.GetDownLeft1()
+        && inputManager.GetDownRight1())
       {
-        anim.SetBool("CounterRight", true);
+        anim.SetBool("Guard", true);
       }
-    }
-    else { anim.SetBool("CounterRight", false); }
+      else { anim.SetBool("Guard", false); }
 
-    // ダウン
-    if (hpManager.hp1 <= 0.0f)
-    {
-      anim.SetBool("Down", true);
+      // カウンター
+      if (inputManager.GetDownLeft1()
+        || inputManager.GetDownRight1())
+      {
+        if (boxerState.Guard2)
+        {
+          anim.SetBool("CounterRight", true);
+        }
+      }
+      else { anim.SetBool("CounterRight", false); }
+
+      // ダウン
+      if (hpManager.hp1 <= 0.0f)
+      {
+        anim.SetBool("Down", true);
+      }
+      else { anim.SetBool("Down", false); }
     }
-    else { anim.SetBool("Down", false); }
   }
 }
