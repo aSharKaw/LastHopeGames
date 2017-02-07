@@ -15,13 +15,51 @@ public class boxerInput1 : MonoBehaviour
     // 左パンチ
     if (inputManager.GetDownLeft1()
       && !inputManager.GetDownRight1())
-    { anim.SetBool("Left", true); }
+    {
+      if (!boxerState.Left1)
+      {
+        anim.SetBool("Left", true);
+        soundManager.Instance.PlaySE(5);
+      }
+    }
     else { anim.SetBool("Left", false); }
 
     // 右パンチ
     if (inputManager.GetDownRight1()
       && !inputManager.GetDownLeft1())
-    { anim.SetBool("Right", true); }
+    {
+      if (!boxerState.Right1)
+      {
+        anim.SetBool("Right", true);
+        soundManager.Instance.PlaySE(4);
+      }
+    }
     else { anim.SetBool("Right", false); }
+
+    // ガード
+    if (inputManager.GetDownLeft1()
+      && inputManager.GetDownRight1())
+    {
+      anim.SetBool("Guard", true);
+    }
+    else { anim.SetBool("Guard", false); }
+
+    // カウンター
+    if (inputManager.GetDownLeft1()
+      || inputManager.GetDownRight1())
+    {
+      if (boxerState.Guard2)
+      {
+        anim.SetBool("CounterRight", true);
+      }
+    }
+    else { anim.SetBool("CounterRight", false); }
+
+    // ダウン
+    if (hpManager.hp1 <= 0.0f)
+    {
+      anim.SetBool("Down", true);
+    }
+    else { anim.SetBool("Down", false); }
   }
 }

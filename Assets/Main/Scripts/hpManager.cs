@@ -33,6 +33,18 @@ public class hpManager : MonoBehaviour
       boxerState.CounterLeft2, boxerState.CounterRight2, 1);
     Counter(boxerState.Left2, boxerState.Right2,
       boxerState.CounterLeft1, boxerState.CounterRight1, 0);
+
+    // 復帰
+    if (hp1 == 0.0f)
+    {
+      Reborn(ref countManager.rebornCount1, 1, 0, 0.25f);
+      Reborn(ref countManager.rebornCount1, 2, 0, 0.5f);
+    }
+    if (hp2 == 0.0f)
+    {
+      Reborn(ref countManager.rebornCount2, 1, 0, 0.25f);
+      Reborn(ref countManager.rebornCount2, 2, 0, 0.5f);
+    }
   }
 
   void Punch(bool state1, bool state2, int player)
@@ -44,7 +56,7 @@ public class hpManager : MonoBehaviour
   }
 
   void Counter(bool state1, bool state2,
-    bool state3, bool state4 ,int player)
+    bool state3, bool state4, int player)
   {
     if (state1 || state2)
     {
@@ -52,6 +64,15 @@ public class hpManager : MonoBehaviour
       {
         hpBar[player].fillAmount -= punchDamageCounter;
       }
+    }
+  }
+
+  void Reborn(ref int reCount, int limit, int player, float hp)
+  {
+    if (countManager.GetDownCount() == 10 && reCount == limit)
+    {
+      hpBar[player].fillAmount = hp;
+      --reCount;
     }
   }
 }
