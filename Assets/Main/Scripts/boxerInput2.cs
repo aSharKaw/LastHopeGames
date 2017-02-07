@@ -5,6 +5,8 @@ public class boxerInput2 : MonoBehaviour
 {
   private Animator anim;
 
+  private bool flag = true;
+
   void Start()
   {
     anim = GetComponent<Animator>();
@@ -20,7 +22,8 @@ public class boxerInput2 : MonoBehaviour
       {
         // 左パンチ
         if (inputManager.GetDownLeft2()
-          && !inputManager.GetDownRight2())
+          && !inputManager.GetDownRight2()
+          && !boxerState.Guard1)
         {
           if (!boxerState.Left2 && !boxerState.Down2)
           {
@@ -32,7 +35,8 @@ public class boxerInput2 : MonoBehaviour
 
         // 右パンチ
         if (inputManager.GetDownRight2()
-          && !inputManager.GetDownLeft2())
+          && !inputManager.GetDownLeft2()
+          && !boxerState.Guard1)
         {
           if (!boxerState.Right2 && !boxerState.Down2)
           {
@@ -64,9 +68,15 @@ public class boxerInput2 : MonoBehaviour
         // ダウン
         if (hpManager.hp2 <= 0.0f)
         {
-          anim.SetBool("Down", true);
+          if (flag)
+          {
+            anim.SetBool("Down", true);
+            soundManager.Instance.PlaySE(8);
+            countManager.downCount2++;
+            flag = false;
+          }
         }
-        else { anim.SetBool("Down", false); }
+        else { anim.SetBool("Down", false); flag = true; }
       }
     }
   }

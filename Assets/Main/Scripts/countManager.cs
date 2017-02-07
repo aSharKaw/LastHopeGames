@@ -3,11 +3,14 @@ using UnityEngine;
 
 public class countManager : MonoBehaviour
 {
-  private static int downCount = 0;
-  public static int GetDownCount() { return downCount; }
+  private static int inputCount = 0;
+  public static int GetInputCount() { return inputCount; }
 
   public static int rebornCount1 = 2;
   public static int rebornCount2 = 2;
+
+  public static int downCount1 = 0;
+  public static int downCount2 = 0;
 
   float timeCount = 0.0f;
 
@@ -21,12 +24,12 @@ public class countManager : MonoBehaviour
       inputManager.GetDownLeft2(),
       inputManager.GetDownRight2());
 
-    if (downCount >= 10)
+    if (inputCount >= 10)
     {
       timeCount += Time.deltaTime;
       if (timeCount >= 1.0f)
       {
-        downCount = 0;
+        inputCount = 0;
         timeCount = 0.0f;
       }
     }
@@ -36,7 +39,7 @@ public class countManager : MonoBehaviour
   {
     if (hp == 0.0f)
     {
-      if (f1 || f2) { ++downCount; }
+      if (f1 || f2) { ++inputCount; }
     }
   }
 }

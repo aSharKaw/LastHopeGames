@@ -74,7 +74,7 @@ public class hpManager : MonoBehaviour
 
   void Reborn(ref int reCount, int limit, int player, float hp)
   {
-    if (countManager.GetDownCount() == 10 && reCount == limit)
+    if (countManager.GetInputCount() == 10 && reCount == limit)
     {
       hpBar[player].fillAmount = hp;
       --reCount;
