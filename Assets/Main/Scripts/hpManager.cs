@@ -14,6 +14,11 @@ public class hpManager : MonoBehaviour
   [SerializeField]
   float punchDamageCounter = 0.0075f;
 
+  void Awake()
+  {
+    hp1 = 1.0f; hp2 = 1.0f;
+  }
+
   void Update()
   {
     // 変数名が長い為、変数に保存
@@ -42,8 +47,8 @@ public class hpManager : MonoBehaviour
     }
     if (hp2 == 0.0f)
     {
-      Reborn(ref countManager.rebornCount2, 1, 0, 0.25f);
-      Reborn(ref countManager.rebornCount2, 2, 0, 0.5f);
+      Reborn(ref countManager.rebornCount2, 1, 1, 0.25f);
+      Reborn(ref countManager.rebornCount2, 2, 1, 0.5f);
     }
   }
 

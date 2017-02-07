@@ -1,7 +1,5 @@
 ﻿
 using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
 
 public class countManager : MonoBehaviour
 {
@@ -32,8 +30,6 @@ public class countManager : MonoBehaviour
         timeCount = 0.0f;
       }
     }
-
-    Debug.Log(downCount);
   }
 
   void M(float hp, bool f1, bool f2)
