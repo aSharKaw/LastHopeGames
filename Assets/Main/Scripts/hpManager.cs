@@ -10,9 +10,9 @@ public class hpManager : MonoBehaviour
   public static float hp1, hp2;
 
   [SerializeField]
-  float punchDamage = 0.005f;
+  float punchDamage = 0.005f; // 0.005f
   [SerializeField]
-  float punchDamageCounter = 0.0075f;
+  float punchDamageCounter = 0.05f; // 0.0075f
 
   void Awake()
   {
@@ -35,9 +35,9 @@ public class hpManager : MonoBehaviour
     Punch(boxerState.Right2, boxerState.Idle1, 0);
 
     Counter(boxerState.Left1, boxerState.Right1,
-      boxerState.CounterLeft2, boxerState.CounterRight2, 1);
+      boxerState.LeftCounter2, boxerState.RightCounter2, 1);
     Counter(boxerState.Left2, boxerState.Right2,
-      boxerState.CounterLeft1, boxerState.CounterRight1, 0);
+      boxerState.LeftCounter1, boxerState.RightCounter1, 0);
 
     // 復帰
     if (hp1 == 0.0f)
@@ -68,6 +68,7 @@ public class hpManager : MonoBehaviour
       if (state3 || state4)
       {
         hpBar[player].fillAmount -= punchDamageCounter;
+        Debug.Log("カウンターダメージ！");
       }
     }
   }
