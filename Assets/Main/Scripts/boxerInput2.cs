@@ -30,7 +30,9 @@ public class boxerInput2 : MonoBehaviour
           {
             if (!boxerState.Left2
               && !boxerState.Down2
-              && !boxerState.LeftCounter2)
+              && !boxerState.LeftCounter2
+              && !boxerState.Damage2
+              && !boxerState.Damage1)
             {
               anim.SetBool("Left", true);
               soundManager.Instance.PlaySE(5);
@@ -45,7 +47,9 @@ public class boxerInput2 : MonoBehaviour
           {
             if (!boxerState.Right2
               && !boxerState.Down2
-              && !boxerState.RightCounter2)
+              && !boxerState.RightCounter2
+              && !boxerState.Damage2
+              && !boxerState.Damage1)
             {
               anim.SetBool("Right", true);
               soundManager.Instance.PlaySE(4);
@@ -93,6 +97,11 @@ public class boxerInput2 : MonoBehaviour
             }
           }
           else { anim.SetBool("Down", false); flag = true; }
+
+          // ダメージ
+          if (boxerState.Left1 || boxerState.Right1)
+          { anim.SetBool("Damage", true); }
+          else { anim.SetBool("Damage", false); }
         }
       }
     }

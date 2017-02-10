@@ -19,6 +19,7 @@ public class boxerState : MonoBehaviour
   public static bool Guard1, Guard2;
   public static bool Down1, Down2;
   public static bool Reborn1, Reborn2;
+  public static bool Damage1, Damage2;
 
   void Start()
   {
@@ -47,5 +48,7 @@ public class boxerState : MonoBehaviour
     Down2 = animState2.IsName("Base Layer.Down");
     Reborn1 = animState1.IsName("Base Layer.Reborn");
     Reborn2 = animState2.IsName("Base Layer.Reborn");
+    Damage1 = animState1.IsName("Base Layer.Damage");
+    Damage2 = animState2.IsName("Base Layer.Damage");
   }
 }
