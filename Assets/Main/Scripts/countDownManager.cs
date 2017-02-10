@@ -18,7 +18,7 @@ public class countDownManager : MonoBehaviour
     time = 6;
     timeLeft = 0.0f;
     flag = true;
-    countDown1 = GetComponent<Text>();
+    countDown1 = GameObject.FindGameObjectWithTag("CountDown1").GetComponent<Text>();
     countDown2 = GameObject.FindGameObjectWithTag("CountDown2").GetComponent<Text>();
   }
 
