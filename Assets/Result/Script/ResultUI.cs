@@ -5,11 +5,16 @@ using UnityEngine.UI;
 
 public class ResultUI : MonoBehaviour
 {
+    ResultManager manager;
 
     [SerializeField]
-    private GameObject overObj;
+    private GameObject winOverObj;
     [SerializeField]
-    private GameObject underObj;
+    private GameObject winUnderObj;
+    [SerializeField]
+    private GameObject loseOverObj;
+    [SerializeField]
+    private GameObject loseUnderObj;
 
     private Image overImage;
     private Image underImage;
@@ -17,12 +22,73 @@ public class ResultUI : MonoBehaviour
     [SerializeField]
     private float _speed;
 
-    // Use this for initialization
-    void Awake()
-    {
-        overImage = overObj.GetComponent<Image>();
-        underImage = underObj.GetComponent<Image>();
+    [SerializeField]
+    private bool player1P;
+    
+    //ResultManagerを検索
+    [SerializeField]
+    private GameObject resultManager;
+    [SerializeField]
+    private GameObject canvas;
 
+    private int winner;
+
+    void Start()
+    {
+        manager = resultManager.GetComponent<ResultManager>();
+
+        winner = manager.winner;
+
+        if(player1P)
+        {
+            if (winner == 1)
+            {
+                Destroy(loseOverObj);
+                Destroy(loseUnderObj);
+                overImage = winOverObj.GetComponent<Image>();
+                underImage = winUnderObj.GetComponent<Image>();
+            }
+            else if (winner == 2)
+            {
+                Destroy(winOverObj);
+                Destroy(winUnderObj);
+                overImage = loseOverObj.GetComponent<Image>();
+                underImage = loseUnderObj.GetComponent<Image>();
+            }
+            else
+            {
+                Destroy(loseOverObj);
+                Destroy(loseUnderObj);
+                overImage = winOverObj.GetComponent<Image>();
+                underImage = winUnderObj.GetComponent<Image>();
+            }
+        }
+        else
+        {
+            if (winner == 1)
+            {
+                Destroy(winOverObj);
+                Destroy(winUnderObj);
+                overImage = loseOverObj.GetComponent<Image>();
+                underImage = loseUnderObj.GetComponent<Image>();
+            }
+            else if (winner == 2)
+            {
+                Destroy(loseOverObj);
+                Destroy(loseUnderObj);
+                overImage = winOverObj.GetComponent<Image>();
+                underImage = winUnderObj.GetComponent<Image>();
+            }
+            else
+            {
+                Destroy(loseOverObj);
+                Destroy(loseUnderObj);
+                overImage = winOverObj.GetComponent<Image>();
+                underImage = winUnderObj.GetComponent<Image>();
+
+            }
+        }
+        
         //消しておく
         underImage.color = new Color(underImage.color.r,
             underImage.color.g,

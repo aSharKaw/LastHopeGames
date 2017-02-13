@@ -7,6 +7,7 @@ public class ResultManager : MonoBehaviour {
 
     ResultCamera cameraManager;
     ResultMothion mothionManager;
+    
     //白フェード！
     //フラグ受け取る！
     //勝ったほうにWIN、負けたらLOSE表示！
@@ -18,11 +19,9 @@ public class ResultManager : MonoBehaviour {
     //・・・まあフェードじゃなくてそのままメインにくっつけてもいい気がするわ。
 
     //ここにHP渡せばあとはやってくれるよ
-    private float player1HP = 1;
+    private float player1HP;
     private float player2HP;
-
     
-
     [SerializeField]
     private int cameraRotateSpeed;
 
@@ -30,16 +29,16 @@ public class ResultManager : MonoBehaviour {
     private GameObject player1Obj, player2Obj;
     [SerializeField]
     private GameObject camera1P, camera2P;
-
     
-
-    private int winner;
+    //勝利プレイヤーの判別
+    [System.NonSerialized]
+    public int winner;
 
     private int count;
     [SerializeField]
     private int limitCount = 10;
 
-    void Start ()
+    void Awake ()
     {
         cameraManager = GetComponent<ResultCamera>();
         mothionManager = GetComponent<ResultMothion>();
