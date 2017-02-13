@@ -24,7 +24,7 @@ public class panelMnager : MonoBehaviour
     }
     if (boxerState.Left2 || boxerState.Right2) // 通ってる
     {
-      panel1.GetComponent<Image>().color = new Color(11, 0, 0, 0.5f);
+      panel1.GetComponent<Image>().color = new Color(1, 0, 0, 0.5f);
     }
     else
     {
