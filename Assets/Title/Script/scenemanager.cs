@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class scenemanager : MonoBehaviour
 {
-
+    
     public void toNextScene()
     {
         SceneManager.LoadScene("Admission");
